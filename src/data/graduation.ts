@@ -40,7 +40,7 @@ export const graduation: GraduationInvitation = {
   locationAddress: "19 Nguyễn Hữu Thọ, Phường Tân Hưng, TP. Hồ Chí Minh",
   locationMapUrl:
     "https://www.google.com/maps/place/%C4%90%E1%BA%A1i+h%E1%BB%8Dc+T%C3%B4n+%C4%90%E1%BB%A9c+Th%E1%BA%AFng/@10.7319314,106.6993418,856m/data=!3m2!1e3!4b1!4m6!3m5!1s0x317528b2747a81a3:0x33c1813055acb613!8m2!3d10.7319314!4d106.6993418!16s%2Fm%2F02q2bz4?entry=ttu&g_ep=EgoyMDI2MTAxMS4wIKXMDSoASAFQAw%3D%3D",
-  locationImages: ["/images/guide/sanh_a.jpg", "/images/guide/toa_a.png"],
+  locationImages: ["/images/guide/overview-map-1.jpg", "/images/guide/overview-map-2.png"],
   closingMessage:
     "Sự hiện diện của bạn sẽ khiến ngày đặc biệt này trở nên ý nghĩa hơn.",
 };
