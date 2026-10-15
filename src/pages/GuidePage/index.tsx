@@ -5,13 +5,13 @@ const overviewMaps = [
   {
     id: "overview-1",
     title: "Sơ đồ khu vực",
-    image: "/public/images/guide/overview-map-1.jpg",
+    image: "/images/guide/overview-map-1.jpg",
     alt: "Sơ đồ tổng quan khuôn viên trường",
   },
   {
     id: "overview-2",
     title: "Sơ đồ tổng quan",
-    image: "/public/images/guide/overview-map-2.png",
+    image: "/images/guide/overview-map-2.png",
     alt: "Sơ đồ các khu vực trong trường",
   },
 ];
@@ -315,7 +315,7 @@ export default function GuidePage() {
                                       type="button"
                                       onClick={() => {
                                         setSelectedImage(
-                                          "/public/images/guide/cong-7.jpg",
+                                          "/images/guide/cong-7.jpg",
                                         );
                                       }}
                                       aria-label="Xem ảnh cổng 7"
