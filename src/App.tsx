@@ -1,7 +1,7 @@
-import GraduationPage from "./pages/GraduationPage";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
-  return <GraduationPage />;
+  return <AppRoutes />;
 }
 
 export default App;

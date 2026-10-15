@@ -4,9 +4,10 @@ interface CardCoverProps {
   isOpen: boolean;
   isDisabled: boolean;
   onOpen: () => void;
+  recipientName: string;
 }
 
-export default function CardCover({ isOpen, isDisabled, onOpen }: CardCoverProps) {
+export default function CardCover({ isOpen, isDisabled, onOpen, recipientName }: CardCoverProps) {
   return (
     <button
       className="card-cover"
@@ -21,11 +22,14 @@ export default function CardCover({ isOpen, isDisabled, onOpen }: CardCoverProps
         <span className="cover-corner cover-corner--top-right" aria-hidden="true" />
         <span className="cover-corner cover-corner--bottom-left" aria-hidden="true" />
         <span className="cover-corner cover-corner--bottom-right" aria-hidden="true" />
-        <span className="cover-eyebrow">THE GRADUATION INVITATION</span>
+        <span className="cover-eyebrow">THƯ MỜI LỄ TỐT NGHIỆP</span>
         <GraduationCap />
-        <strong className="cover-title">You&apos;re Invited</strong>
-        <span className="cover-subtitle">A special day, a new beginning.</span>
-        <span className="cover-action">NHẤN ĐỂ MỞ THIỆP</span>
+        <strong className="cover-title">Thân Mời</strong>
+        <span className="cover-recipient">{recipientName}</span>
+        <span className="cover-action">
+          MỞ THIỆP
+          <span aria-hidden="true">→</span>
+        </span>
       </span>
     </button>
   );

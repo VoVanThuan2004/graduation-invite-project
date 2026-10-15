@@ -7,6 +7,8 @@ type CardState = "closed" | "opening" | "open" | "closing";
 
 interface GraduationCardProps {
   invitation: GraduationInvitation;
+  recipientName: string;
+  isInvalidGuest: boolean;
 }
 
 const OPEN_DURATION = 980;
@@ -16,7 +18,7 @@ function reducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-export default function GraduationCard({ invitation }: GraduationCardProps) {
+export default function GraduationCard({ invitation, recipientName, isInvalidGuest }: GraduationCardProps) {
   const [cardState, setCardState] = useState<CardState>("closed");
   const isOpen = cardState === "open";
   const isTransitioning = cardState === "opening" || cardState === "closing";
@@ -44,8 +46,14 @@ export default function GraduationCard({ invitation }: GraduationCardProps) {
     <div className="card-wrap">
       <div className={`card-scene card-scene--${cardState}`}>
         <div className="invitation-paper">
-          <CardInterior invitation={invitation} isVisible={isOpen} onClose={closeCard} />
-          <CardCover isOpen={isOpen || cardState === "opening"} isDisabled={cardState !== "closed"} onOpen={openCard} />
+          <CardInterior
+            invitation={invitation}
+            recipientName={recipientName}
+            isInvalidGuest={isInvalidGuest}
+            isVisible={isOpen}
+            onClose={closeCard}
+          />
+          <CardCover recipientName={recipientName} isOpen={isOpen || cardState === "opening"} isDisabled={cardState !== "closed"} onOpen={openCard} />
         </div>
       </div>
       <p className="card-hint" aria-live="polite">
