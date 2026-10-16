@@ -31,11 +31,11 @@ export const graduation: GraduationInvitation = {
   invitationTitle: "Thư mời tham dự",
   invitationMessage:
     "LỄ TỐT NGHIỆP",
-  dateLabel: "DATE",
+  dateLabel: "THỜI GIAN",
   dateValue: "10:00, 23/10/2026",
   dateTime: "10:00",
   dateDate: "23/10/2026",
-  locationLabel: "LOCATION",
+  locationLabel: "ĐỊA ĐIỂM",
   locationName: "Sảnh A, Đại học Tôn Đức Thắng",
   locationAddress: "19 Nguyễn Hữu Thọ, Phường Tân Hưng, TP. Hồ Chí Minh",
   locationMapUrl:

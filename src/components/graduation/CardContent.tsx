@@ -15,7 +15,6 @@ export default function CardContent({
   isInvalidGuest,
   onClose,
 }: CardContentProps) {
-
   const [searchParams] = useSearchParams();
   const guestId = searchParams.get("to");
 
@@ -40,18 +39,18 @@ export default function CardContent({
           <p className="graduate-name">{invitation.name}</p>
           <p className="graduate-degree">{invitation.degree}</p>
           <p className="graduate-school">{invitation.university}</p>
-          <p className="class-year">{invitation.classYear}</p>
           <GraduationDetails invitation={invitation} />
           <p className="closing-message">{invitation.closingMessage}</p>
 
           {/* Nút xem hướng dẫn đường đi */}
+
           <Link
             to={guestId ? `/guide/?to=${guestId}` : "/guide"}
-            className="inline-flex items-center gap-2 mt-12 px-5 py-2.5 text-sm font-medium text-white bg-[#a83242] border border-[#d8b66a] rounded-full hover:bg-[#742936] hover:border-[#d8b66a] focus:outline-none focus:ring-2 focus:ring-[#d8b66a] focus:ring-offset-2 focus:ring-offset-[#fff9f0] transition-all duration-200"
+            className="mx-auto mt-8 flex w-fit max-w-full items-center justify-center gap-2 rounded-full border border-[#d8b66a] bg-[#a83242] px-4 py-2.5 text-center text-sm font-medium text-white transition-all duration-200 hover:border-[#d8b66a] hover:bg-[#742936] focus:outline-none focus:ring-2 focus:ring-[#d8b66a] focus:ring-offset-2 focus:ring-offset-[#fff9f0] sm:mt-12 sm:px-5"
             aria-label={`Xem hướng dẫn đường đến ${invitation.locationName}`}
           >
             <svg
-              className="w-4 h-4"
+              className="h-4 w-4 shrink-0"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -63,7 +62,10 @@ export default function CardContent({
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            Xem hướng dẫn đường đi
+
+            <span className="min-w-0 whitespace-normal break-words">
+              Xem hướng dẫn đường đi
+            </span>
           </Link>
         </>
       )}

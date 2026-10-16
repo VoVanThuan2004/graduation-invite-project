@@ -4,7 +4,12 @@ export interface Guest {
 }
 
 export const guests: Guest[] = [
-  { id: "guest-001", name: "Nguyễn Văn A" },
-  { id: "guest-002", name: "Trần Thị B" },
-  { id: "guest-003", name: "Lê Văn C" },
+  { id: "mai-thi", name: "Mai Thi" },
+  { id: "truong-hen", name: "Trương Hên" },
+  { id: "my-nhat", name: "Mỹ Nhật" },
+  { id: "my-hiep", name: "Mỹ Hiệp" },
+  { id: "ky-anh", name: "Kỳ Anh" },
+  { id: "ngoc-tuyet", name: "Ngọc Tuyết"},
+  { id: "nguyen-cuong", name: "Nguyễn Lê Cường"},
+  
 ];

@@ -17,7 +17,6 @@ export default function GraduationPage() {
         <p className="page-eyebrow">{graduation.eyebrow}</p>
         <span className="page-class">{graduation.classYear}</span>
         <h1>{graduation.pageTitle}</h1>
-        <p className="page-intro">{graduation.intro}</p>
       </header>
       <section className="invitation-section" aria-label="Thiệp mời tốt nghiệp">
         <GraduationCard

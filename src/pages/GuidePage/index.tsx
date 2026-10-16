@@ -53,6 +53,11 @@ export default function GuidePage() {
   const [activeTab, setActiveTab] = useState<TransportTap>("motorbike");
   const [isCopied, setIsCopied] = useState<boolean>(false);
   const copyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const phoneNumber = "0935148429";
+  const [isPhoneCopied, setIsPhoneCopied] = useState(false);
+  const phoneCopyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
 
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -97,6 +102,25 @@ export default function GuidePage() {
     }
   };
 
+  const handleCopyPhone = async () => {
+    try {
+      await navigator.clipboard.writeText(phoneNumber);
+
+      setIsPhoneCopied(true);
+
+      if (phoneCopyTimeoutRef.current) {
+        clearTimeout(phoneCopyTimeoutRef.current);
+      }
+
+      phoneCopyTimeoutRef.current = setTimeout(() => {
+        setIsPhoneCopied(false);
+        phoneCopyTimeoutRef.current = null;
+      }, 3000);
+    } catch {
+      alert("Không thể sao chép số điện thoại. Vui lòng thử lại.");
+    }
+  };
+
   return (
     <main className="relative min-h-[100svh] overflow-x-hidden bg-[#fff9f0] bg-[radial-gradient(rgba(116,41,54,0.045)_0.45px,transparent_0.55px)] bg-[size:7px_7px] px-4 py-8 sm:px-6 sm:py-12">
       {/* Nội dung trang */}
@@ -122,7 +146,7 @@ export default function GuidePage() {
           </svg>
           Quay trở lại thiệp mời
         </button>
-        
+
         {/* Khung giấy */}
         <div className="bg-[#fff9f0] p-2 shadow-[0_18px_40px_rgba(116,41,54,0.12)] sm:p-3">
           <div className="border border-[#d8b66a] p-4 sm:p-7 md:p-9">
@@ -147,7 +171,6 @@ export default function GuidePage() {
                 trí và lựa chọn lộ trình di chuyển phù hợp.
               </p>
             </header>
-
             {/* Danh sách bản đồ */}
             <section aria-label="Các sơ đồ khuôn viên trường">
               <div className="space-y-6">
@@ -182,7 +205,6 @@ export default function GuidePage() {
                 ))}
               </div>
             </section>
-
             {/* Phần tabs sẽ được bổ sung ở bước tiếp theo */}
             {/* Tabs phương tiện di chuyển */}
             <section className="mt-10 border-t border-[#d8b66a]/60 pt-7 sm:mt-12 sm:pt-9">
@@ -549,6 +571,101 @@ export default function GuidePage() {
                     </div>
                   </div>
                 )}
+              </div>
+            </section>
+
+            {/* Thông tin liên lạc */}
+            <section className="mt-10 border-t border-[#d8b66a]/60 pt-7 sm:mt-12 sm:pt-9">
+              <header className="mb-6 text-center">
+                <h2 className="mt-1 font-serif text-2xl font-semibold text-[#742936] sm:text-3xl">
+                  Thông tin liên lạc
+                </h2>
+
+                <p className="mt-3 text-sm leading-6 text-[#76665c]">
+                  Nếu cần hỗ trợ trong quá trình di chuyển, bạn có thể liên hệ
+                  với mình.
+                </p>
+              </header>
+
+              <div className="mx-auto max-w-md rounded-xl border border-[#d8b66a]/70 bg-white/40 p-5 sm:p-6">
+                <div className="flex flex-col items-center text-center">
+                  {/* Icon điện thoại */}
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#d8b66a]/70 bg-[#f1dfd6] text-[#a83242]">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-6 w-6"
+                      aria-hidden="true"
+                    >
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 11.19 18a19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.09 3.18 2 2 0 0 1 4.08 1h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.05 8.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.84.57 2.8.69a2 2 0 0 1 1.77 2.05Z" />
+                    </svg>
+                  </div>
+
+                  <p className="mt-4 text-sm text-[#76665c]">Số điện thoại</p>
+
+                  {/* Nhấn số để gọi */}
+                  <a
+                    href={`tel:${phoneNumber}`}
+                    className="mt-1 rounded-md font-extrabold text-2xl tracking-wide text-[#a83242] transition hover:text-[#762835] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a83242] sm:text-3xl"
+                    aria-label={`Gọi số điện thoại ${phoneNumber}`}
+                  >
+                    {phoneNumber}
+                  </a>
+
+                  <p className="mt-2 text-xs text-[#76665c]">
+                    Nhấn vào số điện thoại để gọi trực tiếp.
+                  </p>
+
+                  {/* Nút sao chép */}
+                  <button
+                    type="button"
+                    onClick={handleCopyPhone}
+                    className={`mt-5 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border px-4 py-2.5 text-sm font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a83242] ${
+                      isPhoneCopied
+                        ? "border-green-600 bg-green-50 text-green-700"
+                        : "border-[#d8b66a] bg-[#fff9f0] text-[#a83242] hover:bg-[#f1dfd6]"
+                    }`}
+                  >
+                    {isPhoneCopied ? (
+                      <>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-5 w-5"
+                          aria-hidden="true"
+                        >
+                          <path d="m5 12 4 4L19 6" />
+                        </svg>
+                        Đã sao chép số điện thoại
+                      </>
+                    ) : (
+                      <>
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-5 w-5"
+                          aria-hidden="true"
+                        >
+                          <rect x="8" y="8" width="12" height="12" rx="2" />
+                          <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" />
+                        </svg>
+                        Sao chép số điện thoại
+                      </>
+                    )}
+                  </button>
+                </div>
               </div>
             </section>
           </div>
