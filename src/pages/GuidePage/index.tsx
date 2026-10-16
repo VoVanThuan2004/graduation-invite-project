@@ -342,7 +342,7 @@ export default function GuidePage() {
                                       }}
                                       aria-label="Xem ảnh cổng 7"
                                       title="Xem ảnh cổng 7"
-                                      className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#d8b66a] bg-[#fff9f0] text-[#a83242] transition hover:bg-[#f1dfd6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a83242]"
+                                      className="cursor-pointer flex h-9 w-9 items-center justify-center rounded-lg border border-[#d8b66a] bg-[#fff9f0] text-[#a83242] transition hover:bg-[#f1dfd6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a83242]"
                                     >
                                       <svg
                                         viewBox="0 0 24 24"
