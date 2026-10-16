@@ -541,7 +541,7 @@ button { font: inherit; }
 .cover-corner--bottom-left { bottom: 9px; left: 9px; border-width: 0 0 1px 1px; }
 .cover-corner--bottom-right { right: 9px; bottom: 9px; border-width: 0 1px 1px 0; }
 
-.cover-eyebrow { position: absolute; top: 13%; color: #f1dfd6; font-size: 12px; }
+.cover-eyebrow { position: absolute; top: 12%; color: #f1dfd6; font-size: 15px; }
 .cover-border .graduation-cap { width: 48px; height: 38px; margin-bottom: 15px; color: var(--champagne); }
 .cover-title { font: 600 clamp(42px, 12vw, 57px)/0.9 var(--serif); letter-spacing: -0.035em; }
 .cover-recipient {
