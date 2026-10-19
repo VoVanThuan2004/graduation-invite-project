@@ -45,7 +45,7 @@ export default function CardContent({
           {/* Nút xem hướng dẫn đường đi */}
           <Link
             to={guestId ? `/guide/?to=${guestId}` : "/guide"}
-            className="mx-auto flex w-fit max-w-full items-center justify-center gap-2 rounded-full border border-[#d8b66a] bg-[#a83242] px-4 py-2.5 text-center text-sm font-medium text-white transition-all duration-200 hover:border-[#d8b66a] hover:bg-[#742936] focus:outline-none focus:ring-2 focus:ring-[#d8b66a] focus:ring-offset-2 focus:ring-offset-[#fff9f0] sm:mt-12 sm:px-5"
+            className="mx-auto mt-4 flex w-fit max-w-full items-center justify-center gap-2 rounded-full border border-[#d8b66a] bg-[#a83242] px-4 py-2 text-center text-xs font-medium text-white transition-all duration-200 hover:border-[#d8b66a] hover:bg-[#742936] focus:outline-none focus:ring-2 focus:ring-[#d8b66a] focus:ring-offset-2 focus:ring-offset-[#fff9f0] sm:px-5 sm:text-sm"
             aria-label={`Xem hướng dẫn đường đến ${invitation.locationName}`}
           >
             <svg

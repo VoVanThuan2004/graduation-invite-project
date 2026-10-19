@@ -33,7 +33,7 @@ export const graduation: GraduationInvitation = {
     "LỄ TỐT NGHIỆP",
   dateLabel: "THỜI GIAN",
   dateValue: "10:00, 23/10/2026",
-  dateTime: "9:00",
+  dateTime: "9:30",
   dateDate: "23/10/2026",
   locationLabel: "ĐỊA ĐIỂM",
   locationName: "Sảnh A, Đại học Tôn Đức Thắng",
