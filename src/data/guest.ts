@@ -15,7 +15,11 @@ export const guests: Guest[] = [
   { id: "than-quoc-thinh", name: "Thân Quốc Thịnh" },
   { id: "khanh-trang", name: "Khánh Trang" },
   { id: "thuy-trinh", name: "Thùy Trinh" },
-  { id: "tran-quoc-thinh", name: "Trần Quoc Thịnh" },
+  { id: "tran-quoc-thinh", name: "Trần Quốc Thịnh" },
   { id: "thong", name: "Thông" },
   { id: "nguyen-vu-gia-phuong", name: "Nguyễn Vũ Gia Phương" },
+  { id: "luong-trieu-dai", name: "Lương Triều Đại" },
+  { id: "pham-gia-huy", name: "Phạm Gia Huy" },
+  { id: "le-tien-dat", name: "Lê Tiến Đạt" },
+  { id: "trinh-tien-thinh", name: "Trịnh Tiến Thịnh" },
 ];
